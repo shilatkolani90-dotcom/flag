@@ -30,20 +30,20 @@ def flag():
         for j in range(consts.BOARD_COLS,0):
             BOARD_GAME[i][j]= consts.FLAG
 
+#
+# def main_bomb ():
+#     x=0
+#     y=0
+#     randon_place=[]
+#     for i in range(consts.MINES_COUNT):
+#         y=random(0,25)
+#         x=random(0,50)
+#
+#
 
-"""def main_bomb ():
-    x=0
-    y=0
-    randon_place=[]
-    for i in range(consts.MINES_COUNT):
-        y=random(0,25)
-        x=random(0,50)
 
 
-"""
-
-
-      """  
+    """  
         while [x,y] in randon_place or on soldier or on flag:  
             y = random(0, 25)
             x = random(0, 50)
