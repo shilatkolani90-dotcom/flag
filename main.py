@@ -17,8 +17,6 @@ stats = {
 }
 
 
-
-
 def print_matrix(matrix):
     for row in matrix:
         for col in row:
@@ -29,11 +27,11 @@ def main ():
     board_game = game_field.empty_board()
     print_matrix(board_game)
 
-    Screen.background()
-    Screen.bushs()
-    soldier.Soldier()
-    Screen.flag_display()
-    # Screen_booms.background()
+    # Screen.background()
+    # Screen.bushs()
+    # soldier.Soldier11(stats["soldier_place"])
+    # Screen.flag_display()
+    Screen_booms.background()
 
     while True:
         for event in pygame.event.get():

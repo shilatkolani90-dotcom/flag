@@ -4,9 +4,9 @@ import consts
 import game_field
 from pygame.locals import*
 import Screen
+
 img=pygame.image.load('soldier.png')
 
-def Soldier():
+def Soldier11(soldier_place):
     small_img=pygame.transform.scale(img,(100,100))
-    Screen.screen.blit(small_img,game_field.soldier_place())
-#
+    Screen.screen.blit(small_img,soldier_place)

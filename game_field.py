@@ -53,10 +53,10 @@ def main_bomb ():
     randon_place=[]
     for i in range(consts.MINES_COUNT):
         y=random.randint(0, 24)
-        x=random.randint(0,49)
+        x=random.randint(0,46)
         while [x,y] in randon_place and (BOARD_GAME[y][x] == "SOLDIER" or BOARD_GAME[y][x] == "FLAG") and x+2 >= len(BOARD_GAME[y])-1  :
             y = random.randint(0,24)
-            x = random.randint(0,49)
+            x = random.randint(0,46)
         BOARD_GAME[y][x] = "MAIN"
         BOARD_GAME[y][x+1] = "MAIN"
         BOARD_GAME[y][x+2] = "MAIN"
