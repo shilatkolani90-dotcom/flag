@@ -31,7 +31,7 @@ def flag():
             BOARD_GAME[i][j]= consts.FLAG
 
 
-def main_bomb ():
+"""def main_bomb ():
     x=0
     y=0
     randon_place=[]
@@ -40,7 +40,7 @@ def main_bomb ():
         x=random(0,50)
 
 
-
+"""
 
 
       """  
