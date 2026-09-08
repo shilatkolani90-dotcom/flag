@@ -72,6 +72,7 @@ def soldier_place():
                 return ((i*20,j*20))
     return ((0,0))
 
+#
 ##
 
 # def flag_place():
