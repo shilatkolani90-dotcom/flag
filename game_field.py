@@ -31,19 +31,32 @@ def flag():
             BOARD_GAME[i][j]= consts.FLAG
 
 
-"""def main_bomb ():
+def main_bomb ():
     x=0
     y=0
     randon_place=[]
     for i in range(consts.MINES_COUNT):
         y=random(0,25)
         x=random(0,50)
-        while [x,y] in randon_place:
+
+
+
+
+
+      """  
+        while [x,y] in randon_place or on soldier or on flag:  
             y = random(0, 25)
             x = random(0, 50)
         randon_place.append([x,y])
     
     for i in range(consts.MINES_COUNT):
-        for
+        for"""
 
-"""
+
+def soldier_place():
+    for i in range(consts.BOARD_ROWS):
+        for j in range(consts.BOARD_COLS):
+            if BOARD_GAME[i][j] == "SOLDIER":
+                return ((i,j))
+    return ((0,0))
+
