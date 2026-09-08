@@ -20,7 +20,7 @@ def background():
 
 def flag_display():
     small_img = pygame.transform.scale(img_flag, (100, 100))
-    screen.blit(small_img, game_field.flag_place)
+    screen.blit(small_img, (0,0))
 
 
 def bushs():
