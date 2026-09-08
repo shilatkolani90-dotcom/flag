@@ -46,7 +46,7 @@ def flag():
 
 
 
-
+#
 def main_bomb ():
     x=0
     y=0
