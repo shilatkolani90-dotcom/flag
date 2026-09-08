@@ -7,5 +7,5 @@ import Screen
 img=pygame.image.load('soldier.png')
 
 def Soldier():
-    small_img=pygame.transform.scale(img,(120,120))
+    small_img=pygame.transform.scale(img,(100,100))
     Screen.screen.blit(small_img,game_field.soldier_place())
