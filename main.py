@@ -4,14 +4,21 @@ import pygame
 import Screen_booms
 import soldier
 
+def print_matrix(matrix):
+    for row in matrix:
+        for col in row:
+            print(col, end=" ")
+        print(" ")
+
 def main ():
     board_game = game_field.empty_board()
-    print(board_game)
+    print_matrix(board_game)
 
-    # Screen.background()
-    # Screen.bushs()
-    # soldier.Soldier()
-    Screen_booms.background()
+    Screen.background()
+    Screen.bushs()
+    soldier.Soldier()
+    Screen.flag_display()
+    # Screen_booms.background()
 
     while True:
         for event in pygame.event.get():

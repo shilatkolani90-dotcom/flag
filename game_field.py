@@ -5,12 +5,16 @@ BOARD_GAME = []
 TEMP =[]
 
 #empty board
+
 def empty_board ():
     for i in range(consts.BOARD_ROWS):
+        row=[]
         for j in range(consts.BOARD_COLS):
-            TEMP.append(consts.EMPTY_PLACE)
-        BOARD_GAME.append(TEMP)
-        tamp = []
+            row.append("EMPTY")
+        BOARD_GAME.append(row)
+        #     TEMP.append(consts.EMPTY_PLACE)
+        # BOARD_GAME.append(TEMP)
+        # tamp = []
     soldier()
     flag()
     main_bomb()
@@ -24,7 +28,7 @@ def soldier ():
             BOARD_GAME[i][j] = consts.SOLDIER
 
 
-def add_flag ():
+def add_soldier ():
     for i in range(consts.FLAG_ROWS):
         for j in range(consts.FLAG_COLS):
             BOARD_GAME[i][j] = consts.FLAG
@@ -36,7 +40,7 @@ def flag():
     for i in range(consts.BOARD_ROWS):
         BOARD_GAME[i].reverse()
     BOARD_GAME.reverse()
-    add_flag()
+    add_soldier()
     for i in range(consts.BOARD_ROWS):
         BOARD_GAME[i].reverse()
     BOARD_GAME.reverse()
@@ -73,10 +77,9 @@ def soldier_place():
 
 ##
 
-
 def flag_place():
     for i in range(consts.BOARD_ROWS):
         for j in range(consts.BOARD_COLS):
             if BOARD_GAME[i][j] == "FLAG":
-                return ((i*20,j*20))
-    return ((0,0))
+                return (22*20,47*20)
+    return ((900,400))
