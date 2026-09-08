@@ -11,7 +11,7 @@ def background():
 
     screenB.fill((0,0,0))
     start_p=[0,0]
-    end_p=[(consts.BOARD_COLS)*20,0]
+    end_p=[consts.BOARD_COLS * 20, 0]
 
     for i in range(consts.BOARD_COLS):
          start_p[1]+=consts.CELL_SIZE
