@@ -24,7 +24,7 @@ def soldier ():
             BOARD_GAME[i][j] = consts.SOLDIER
 
 
-def add_soldier ():
+def add_flag ():
     for i in range(consts.FLAG_ROWS):
         for j in range(consts.FLAG_COLS):
             BOARD_GAME[i][j] = consts.FLAG
@@ -36,7 +36,7 @@ def flag():
     for i in range(consts.BOARD_ROWS):
         BOARD_GAME[i].reverse()
     BOARD_GAME.reverse()
-    add_soldier()
+    add_flag()
     for i in range(consts.BOARD_ROWS):
         BOARD_GAME[i].reverse()
     BOARD_GAME.reverse()
@@ -72,6 +72,7 @@ def soldier_place():
     return ((0,0))
 
 ##
+
 
 def flag_place():
     for i in range(consts.BOARD_ROWS):
