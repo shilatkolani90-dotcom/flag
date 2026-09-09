@@ -51,6 +51,7 @@ def flag():
 def main_bomb ():
     x=0
     y=0
+    #
     random_place=[]
     for i in range(consts.MINES_COUNT):
         x=random.randint(0, (consts.BOARD_ROWS-1))

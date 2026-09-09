@@ -5,7 +5,6 @@ import Screen_booms
 import soldier
 import consts
 from flag.soldier import Soldier
-img=pygame.image.load('soldier.png')
 
 stats = {
     "soldier_place_img" : [0,0],
@@ -35,7 +34,9 @@ def main ():
     # Screen_booms.background()
     # Screen_booms.Soldier_booms(stats["soldier_place_img"])
     # Screen_booms.booms()
-
+    pygame.display.set_caption('flag game')
+    x=0
+    y=0
     while stats["is_window_open"]:
 
         soldier.Soldier(stats["soldier_place_img"])
@@ -56,7 +57,8 @@ def main ():
                     stats["soldier_legs_place"][1]+= 20
                     stats["soldier_place_img"][1]+= 20
 
-        pygame.display.update()
+
+        pygame.display.flip()
 
 
 main()
