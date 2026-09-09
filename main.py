@@ -56,7 +56,7 @@ def main ():
                     stats["soldier_place_img"][1]+= 20
 
 
-
+"""
                  if "MAIN" == board_game[(stats["soldier_legs_place"][0])//40][(stats["soldier_legs_place"][1])//40]:
                         stats["state"] = consts.LOSE_STATE
                         Screen.draw_lose_message()
@@ -66,7 +66,7 @@ def main ():
                         Screen.draw_win_message()
 
                  pygame.display.update()
-
+"""
 
 #
 main()
