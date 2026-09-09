@@ -51,19 +51,19 @@ def flag():
 def main_bomb ():
     x=0
     y=0
-    #
+
     random_place=[]
-    for i in range(consts.MINES_COUNT):
-        x=random.randint(0, (consts.BOARD_ROWS-1))
-        y=random.randint(0,(consts.BOARD_COLS-1)-2)
-        while [x,y] in random_place or (BOARD_GAME[x][y] == "SOLDIER" or BOARD_GAME[x][y] == "FLAG"):
-            x = random.randint(0,(consts.BOARD_ROWS-1))
-            y = random.randint(0,(consts.BOARD_COLS-1)-2)
-        random_place.append((x,y))
-        BOARD_GAME[x][y] = "MAIN"
-        BOARD_GAME[x][y+1] = "MAIN"
-        BOARD_GAME[x][y+2] = "MAIN"
-    return random_place
+    # for i in range(consts.MINES_COUNT):
+    #     x=random.randint(0, (consts.BOARD_ROWS-1))
+    #     y=random.randint(0,(consts.BOARD_COLS-1)-2)
+    #     while [x,y] in random_place or (BOARD_GAME[x][y] == "SOLDIER" or BOARD_GAME[x][y] == "FLAG"):
+    #         x = random.randint(0,(consts.BOARD_ROWS-1))
+    #         y = random.randint(0,(consts.BOARD_COLS-1)-2)
+    #     random_place.append((x,y))
+    #     BOARD_GAME[x][y] = "MAIN"
+    #     BOARD_GAME[x][y+1] = "MAIN"
+    #     BOARD_GAME[x][y+2] = "MAIN"
+    # return random_place
 
 
 
