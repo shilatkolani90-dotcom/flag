@@ -37,6 +37,8 @@ def main ():
     # Screen_booms.booms()
 
     while stats["is_window_open"]:
+
+        soldier.Soldier(stats["soldier_place_img"])
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -53,8 +55,6 @@ def main ():
                 if event.key == pygame.K_DOWN:
                     stats["soldier_legs_place"][1]+= 20
                     stats["soldier_place_img"][1]+= 20
-
-            soldier.Soldier(stats["soldier_place_img"])
 
         pygame.display.update()
 
