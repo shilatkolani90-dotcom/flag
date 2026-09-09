@@ -4,7 +4,7 @@ import pygame
 import Screen_booms
 import soldier
 import consts
-from flag.soldier import Soldier
+img=pygame.image.load('soldier.png')
 
 stats = {
     "soldier_place_img" : [0,0],
@@ -26,17 +26,14 @@ def print_matrix(matrix):
 def main ():
     board_game = game_field.empty_board()
     print_matrix(board_game)
-    #
     Screen.background()
     Screen.bushs()
-    # soldier.Soldier(stats["soldier_place_img"])
+    soldier.Soldier(stats["soldier_place_img"])
     Screen.flag_display()
-    # Screen_booms.background()
-    # Screen_booms.Soldier_booms(stats["soldier_place_img"])
-    # Screen_booms.booms()
-    pygame.display.set_caption('flag game')
-    x=0
-    y=0
+    Screen_booms.background()
+    Screen_booms.Soldier_booms(stats["soldier_place_img"])
+    Screen_booms.booms()
+
     while stats["is_window_open"]:
 
         soldier.Soldier(stats["soldier_place_img"])
@@ -59,9 +56,17 @@ def main ():
                     stats["soldier_place_img"][1]+= 20
 
 
+                 if "MAIN" == board_game[(stats["soldier_legs_place"][0])//40][(stats["soldier_legs_place"][1])//40]:
+                        print ("lose")
+                        Screen.draw_lose_message()
+                        stats["state"] = consts.LOSE_STATE
+
+                 if "FLAG" == board_game[(stats["soldier_legs_place"][0])//60][(stats["soldier_legs_place"][1])//40]:
+                        stats["state"] = consts.WIN_STATE
+                        Screen.draw_win_message()
 
 
-        pygame.display.flip()
+                 pygame.display.update()
 
 
 main()
