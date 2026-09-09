@@ -44,18 +44,21 @@ def main ():
             if event.type == pygame.QUIT:
                 pygame.quit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
+
+                 if event.key == pygame.K_LEFT  and stats["soldier_legs_place"][0]>20 :
                     stats["soldier_legs_place"][0]-= 20
                     stats["soldier_place_img"][0]-=20
-                if event.key == pygame.K_RIGHT:
+                 if event.key == pygame.K_RIGHT and stats["soldier_legs_place"][0] < 980:
                     stats["soldier_legs_place"][0]+= 20
                     stats["soldier_place_img"][0]+= 20
-                if event.key == pygame.K_UP:
+                 if event.key == pygame.K_UP and stats["soldier_legs_place"][1]>20:
                     stats["soldier_legs_place"][1]-= 20
                     stats["soldier_place_img"][1]-= 20
-                if event.key == pygame.K_DOWN:
+                 if event.key == pygame.K_DOWN and stats["soldier_legs_place"][1] < 480:
                     stats["soldier_legs_place"][1]+= 20
                     stats["soldier_place_img"][1]+= 20
+
+
 
 
         pygame.display.flip()
