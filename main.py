@@ -8,7 +8,8 @@ import consts
 
 
 stats = {
-    "soldier_place" : (0,0),
+    "soldier_place_img" : [0,0],
+    "soldier_legs_place" : [3*consts.CELL_SIZE,2*consts.CELL_SIZE],
     "soldier_move" : False,
     "flag_plac" : (900,400),
     "if_main" : False,
@@ -26,17 +27,32 @@ def print_matrix(matrix):
 def main ():
     board_game = game_field.empty_board()
     print_matrix(board_game)
+    #
+    Screen.background()
+    Screen.bushs()
+    soldier.Soldier(stats["soldier_place_img"])
+    Screen.flag_display()
+    # Screen_booms.background()
+    # Screen_booms.Soldier_booms(stats["soldier_place_img"])
+    # Screen_booms.booms()
 
-    # Screen.background()
-    # Screen.bushs()
-    # soldier.Soldier11(stats["soldier_place"])
-    # Screen.flag_display()
-    Screen_booms.background()
-
-    while True:
+    while stats["is_window_open"]:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    stats["soldier_legs_place"][1]-= 1
+                    stats["soldier_place_img"][1]-=1
+                if event.key == pygame.K_RIGHT:
+                    stats["soldier_legs_place"][1]+= 1
+                    stats["soldier_place_img"][1]+= 1
+                if event.key == pygame.K_UP:
+                    stats["soldier_legs_place"][0]-= 1
+                    stats["soldier_place_img"][0]-= 1
+                if event.key == pygame.K_DOWN:
+                    stats["soldier_legs_place"][0]+= 1
+                    stats["soldier_place_img"][0]+= 1
 
         pygame.display.update()
 

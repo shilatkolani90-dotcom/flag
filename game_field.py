@@ -2,7 +2,7 @@ import random
 from flag import consts
 
 BOARD_GAME = []
-TEMP =[]
+Main_booms =[]
 
 #empty board
 
@@ -14,7 +14,8 @@ def empty_board ():
         BOARD_GAME.append(row)
     soldier()
     flag()
-    main_bomb()
+    global Main_booms
+    Main_booms=main_bomb()
 
     return BOARD_GAME
 
@@ -46,21 +47,22 @@ def flag():
 
 
 
-#
+#x+2 >= len(BOARD_GAME[y])-1
 def main_bomb ():
     x=0
     y=0
-    randon_place=[]
+    random_place=[]
     for i in range(consts.MINES_COUNT):
-        y=random.randint(0, 24)
-        x=random.randint(0,46)
-        while [x,y] in randon_place and (BOARD_GAME[y][x] == "SOLDIER" or BOARD_GAME[y][x] == "FLAG") and x+2 >= len(BOARD_GAME[y])-1  :
-            y = random.randint(0,24)
-            x = random.randint(0,46)
-        BOARD_GAME[y][x] = "MAIN"
-        BOARD_GAME[y][x+1] = "MAIN"
-        BOARD_GAME[y][x+2] = "MAIN"
-    return randon_place
+        x=random.randint(0, (consts.BOARD_ROWS-1))
+        y=random.randint(0,(consts.BOARD_COLS-1)-2)
+        while [x,y] in random_place or (BOARD_GAME[x][y] == "SOLDIER" or BOARD_GAME[x][y] == "FLAG"):
+            x = random.randint(0,(consts.BOARD_ROWS-1))
+            y = random.randint(0,(consts.BOARD_COLS-1)-2)
+        random_place.append((x,y))
+        BOARD_GAME[x][y] = "MAIN"
+        BOARD_GAME[x][y+1] = "MAIN"
+        BOARD_GAME[x][y+2] = "MAIN"
+    return random_place
 
 
 
