@@ -4,8 +4,8 @@ import pygame
 import Screen_booms
 import soldier
 import consts
-
-
+from flag.soldier import Soldier
+img=pygame.image.load('soldier.png')
 
 stats = {
     "soldier_place_img" : [0,0],
@@ -30,7 +30,7 @@ def main ():
     #
     Screen.background()
     Screen.bushs()
-    soldier.Soldier(stats["soldier_place_img"])
+    # soldier.Soldier(stats["soldier_place_img"])
     Screen.flag_display()
     # Screen_booms.background()
     # Screen_booms.Soldier_booms(stats["soldier_place_img"])
@@ -42,17 +42,19 @@ def main ():
                 pygame.quit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    stats["soldier_legs_place"][1]-= 1
-                    stats["soldier_place_img"][1]-=1
+                    stats["soldier_legs_place"][0]-= 20
+                    stats["soldier_place_img"][0]-=20
                 if event.key == pygame.K_RIGHT:
-                    stats["soldier_legs_place"][1]+= 1
-                    stats["soldier_place_img"][1]+= 1
+                    stats["soldier_legs_place"][0]+= 20
+                    stats["soldier_place_img"][0]+= 20
                 if event.key == pygame.K_UP:
-                    stats["soldier_legs_place"][0]-= 1
-                    stats["soldier_place_img"][0]-= 1
+                    stats["soldier_legs_place"][1]-= 20
+                    stats["soldier_place_img"][1]-= 20
                 if event.key == pygame.K_DOWN:
-                    stats["soldier_legs_place"][0]+= 1
-                    stats["soldier_place_img"][0]+= 1
+                    stats["soldier_legs_place"][1]+= 20
+                    stats["soldier_place_img"][1]+= 20
+
+            soldier.Soldier(stats["soldier_place_img"])
 
         pygame.display.update()
 
